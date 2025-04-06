@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="school_teacher_view_tree" model="ir.ui.view">
+        <field name="name">school.teacher.view.tree</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="age" />
+                <field name="subject" />
+                <field name="phone" />
+                <field name="email" />
+                <field name="address" />
+            </list>
+        </field>
+    </record>
+
+    <record id="school_teacher_view_form" model="ir.ui.view">
+        <field name="name">school.teacher.view.form</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="2">
+                        <group>
+                            <field name="name" />
+                            <field name="age" />
+                            <field name="subject" />
+                        </group>
+                        <group>
+                            <field name="phone" />
+                            <field name="email" />
+                            <field name="address" />
+                        </group>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_teacher_action" model="ir.actions.act_window">
+        <field name="name">Teacher</field>
+        <field name="res_model">school.teacher</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="school_school_root_menu"
+        name="School Management"
+        sequence="10" />
+
+    <menuitem
+        id="school_teacher_root_menu"
+        name="Teacher Management"
+        parent="school_school_root_menu"
+        sequence="10" />
+
+    <menuitem
+        id="school_teacher_menu"
+        name="Teacher"
+        action="school_teacher_action"
+        parent="school_teacher_root_menu"
+        sequence="10" />
+
+</odoo>

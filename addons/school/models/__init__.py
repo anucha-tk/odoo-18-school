@@ -1,5 +1,5 @@
-from . import school
+from . import teacher
 
 __all__ = [
-    "school",
+    "teacher",
 ]

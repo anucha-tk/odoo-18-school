@@ -14,9 +14,8 @@
     ],
     "data": [
         "security/ir.model.access.csv",
-        "views/school_view.xml",
+        "views/teacher_view.xml",
         # "views/student_view.xml",
-        # "views/teacher_view.xml",
     ],
     "demo": [""],
     "auto_install": False,
