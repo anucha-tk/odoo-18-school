@@ -19,6 +19,7 @@
         "views/menu.xml",
         "views/teacher_view.xml",
         "views/student_view.xml",
+        "views/subject_view.xml",
     ],
     "demo": [""],
     "auto_install": False,

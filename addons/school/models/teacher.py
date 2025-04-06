@@ -15,3 +15,6 @@ class Teacher(models.Model):
     student_ids = fields.One2many(
         "school.student", "teacher_id", string="Students"
     )
+    subject_ids = fields.One2many(
+        "school.subject", "teacher_id", string="Subjects"
+    )
