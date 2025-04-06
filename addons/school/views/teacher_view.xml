@@ -48,10 +48,6 @@
         <field name="context">{}</field>
     </record>
 
-    <menuitem
-        id="school_school_root_menu"
-        name="School Management"
-        sequence="10" />
 
     <menuitem
         id="school_teacher_root_menu"

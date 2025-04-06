@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="school_school_root_menu"
+        name="School Management"
+        sequence="10" />
+
+</odoo>
