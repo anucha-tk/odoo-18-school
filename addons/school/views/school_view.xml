@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="school_view_tree" model="ir.ui.view">
-        <field name="name">school.view.tree</field>
-        <field name="model">school</field>
+
+    <record id="school_school_view_tree" model="ir.ui.view">
+        <field name="name">school.school.view.tree</field>
+        <field name="model">school.school</field>
         <field name="arch" type="xml">
             <list>
                 <field name="name" />
@@ -14,9 +15,9 @@
         </field>
     </record>
 
-    <record id="school_view_form" model="ir.ui.view">
-        <field name="name">school.view.form</field>
-        <field name="model">school</field>
+    <record id="school_school_view_form" model="ir.ui.view">
+        <field name="name">school.school.view.form</field>
+        <field name="model">school.school</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -31,9 +32,9 @@
         </field>
     </record>
 
-    <record id="school_action" model="ir.actions.act_window">
+    <record id="school_school_action" model="ir.actions.act_window">
         <field name="name">School</field>
-        <field name="res_model">school</field>
+        <field name="res_model">school.school</field>
         <field name="view_mode">list,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
@@ -48,7 +49,7 @@
     <menuitem
         id="school_menu"
         name="School"
-        action="school_action"
+        action="school_school_action"
         parent="school_root_menu"
         sequence="10" />
 

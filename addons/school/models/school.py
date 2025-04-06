@@ -2,7 +2,7 @@ from odoo import fields, models
 
 
 class School(models.Model):
-    _name = "school"
+    _name = "school.school"
     _description = "School"
     _rec_name = "name"
     _inherit = "mail.thread"
