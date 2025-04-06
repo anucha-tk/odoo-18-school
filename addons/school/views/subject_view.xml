@@ -20,7 +20,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group col="2">
+                    <group col="2" string="Subject Information">
                         <group>
                             <field name="name" />
                             <field name="code" />

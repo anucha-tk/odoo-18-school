@@ -21,7 +21,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group col="2">
+                    <group col="2" string="Teacher Information">
                         <group>
                             <field name="name" />
                             <field name="age" />
@@ -31,7 +31,11 @@
                             <field name="email" />
                             <field name="address" />
                         </group>
+                    </group>
+                    <group string="Students">
                         <field name="student_ids" widget="one2many" />
+                    </group>
+                    <group string="Subjects">
                         <field name="subject_ids" widget="one2many" />
                     </group>
                 </sheet>

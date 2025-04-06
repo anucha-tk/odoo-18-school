@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Subjects -->
+    <record id="subject_1" model="school.subject">
+        <field name="name">Mathematics</field>
+        <field name="code">MATH101</field>
+        <field name="description">Basic math concepts</field>
+        <field name="teacher_id" ref="teacher_1" />
+        <field name="student_ids" eval="[(6, 0, [ref('student_1'), ref('student_2')])]" />
+    </record>
+
+    <record id="subject_2" model="school.subject">
+        <field name="name">Science</field>
+        <field name="code">SCI201</field>
+        <field name="description">General science</field>
+        <field name="teacher_id" ref="teacher_2" />
+        <field name="student_ids" eval="[(6, 0, [ref('student_3'), ref('student_4')])]" />
+    </record>
+
+    <record id="subject_3" model="school.subject">
+        <field name="name">History</field>
+        <field name="code">HIS301</field>
+        <field name="description">World history</field>
+        <field name="teacher_id" ref="teacher_3" />
+        <field name="student_ids" eval="[(6, 0, [ref('student_5'), ref('student_6')])]" />
+    </record>
+
+    <record id="subject_4" model="school.subject">
+        <field name="name">English</field>
+        <field name="code">ENG401</field>
+        <field name="description">English grammar and writing</field>
+        <field name="teacher_id" ref="teacher_4" />
+        <field name="student_ids" eval="[(6, 0, [ref('student_7'), ref('student_8')])]" />
+    </record>
+
+    <record id="subject_5" model="school.subject">
+        <field name="name">Art</field>
+        <field name="code">ART501</field>
+        <field name="description">Creative arts</field>
+        <field name="teacher_id" ref="teacher_5" />
+        <field name="student_ids" eval="[(6, 0, [ref('student_9'), ref('student_10')])]" />
+    </record>
+
+
+</odoo>
