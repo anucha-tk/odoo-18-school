@@ -1,0 +1,13 @@
+postgresql/
+etc/odoo-server.log
+etc/addons/
+etc/sessions/
+etc/filestore/
+
+# ruff
+.ruff_cache
+
+.env.dev
+
+# cache
+__pycache__

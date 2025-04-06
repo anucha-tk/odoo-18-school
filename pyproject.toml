@@ -1,0 +1,21 @@
+[tool.ruff]
+line-length = 80
+target-version = "py38"  # Adjust based on your Odoo version
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "W", "I",  # PEP8, Pyflakes, Warnings, Import sorting
+    "UP", "PL", "B", "A"  # Upgrade, Pylint, Bugbear, Built-in checks
+]
+# E501 Ignore long lines (Odoo often has long SQL queries)
+# UP009 Ignore unnecessary encoding declaration
+ignore = ["E501", "UP009", "B018"]
+fixable = ["ALL"]
+
+[tool.commitizen]
+version = "0.1.0"
+update_changelog_on_bump = true
+
+[tool.isort]
+profile = "black"
+line_length = 80

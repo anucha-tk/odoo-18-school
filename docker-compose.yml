@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:17
+    user: root
+    container_name: db
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo18@2024
+      - POSTGRES_DB=postgres
+    restart: always # run as a serviceAA
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+
+  odoo18:
+    image: odoo:18
+    user: root
+    container_name: odoo18
+    depends_on:
+      - db
+    ports:
+      - "10018:8069"
+      - "20018:8072" # live chat
+    tty: true
+    # command: --
+    command: odoo -u school -d odoo-18-school --dev=xml,reload
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo18@2024
+    volumes:
+      #- /etc/timezone:/etc/timezone:ro
+      #- /etc/localtime:/etc/localtime:ro
+      # - ./entrypoint.sh:/entrypoint.sh   # if you want to install additional Python packages, uncomment this line!
+      - ./addons:/mnt/extra-addons
+      - ./etc:/etc/odoo
+    restart: always # run as a service
