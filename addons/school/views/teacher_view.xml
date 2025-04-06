@@ -33,7 +33,7 @@
                             <field name="email" />
                             <field name="address" />
                         </group>
-
+                        <field name="student_ids" widget="one2many" />
                     </group>
                 </sheet>
             </form>

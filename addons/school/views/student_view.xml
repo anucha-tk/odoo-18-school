@@ -8,6 +8,7 @@
             <list>
                 <field name="name" />
                 <field name="age" />
+                <field name="teacher_id" />
             </list>
         </field>
     </record>
@@ -21,6 +22,7 @@
                     <group>
                         <field name="name" />
                         <field name="age" />
+                        <field name="teacher_id" widget="many2one" />
                     </group>
                 </sheet>
             </form>

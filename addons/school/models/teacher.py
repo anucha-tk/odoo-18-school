@@ -13,3 +13,6 @@ class Teacher(models.Model):
     phone = fields.Char(string="Phone")
     email = fields.Char(string="Email")
     address = fields.Text(string="Address")
+    student_ids = fields.One2many(
+        "school.student", "teacher_id", string="Students"
+    )
