@@ -13,6 +13,8 @@
         "base",
     ],
     "data": [
+        "data/school_teacher_data.xml",
+        "data/school_student_data.xml",
         "security/ir.model.access.csv",
         "views/menu.xml",
         "views/teacher_view.xml",

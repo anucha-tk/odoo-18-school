@@ -8,7 +8,6 @@
             <list>
                 <field name="name" />
                 <field name="age" />
-                <field name="subject" />
                 <field name="phone" />
                 <field name="email" />
                 <field name="address" />
@@ -26,7 +25,6 @@
                         <group>
                             <field name="name" />
                             <field name="age" />
-                            <field name="subject" />
                         </group>
                         <group>
                             <field name="phone" />

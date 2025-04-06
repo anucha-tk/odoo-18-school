@@ -9,7 +9,6 @@ class Teacher(models.Model):
 
     name = fields.Char(string="Teacher Name", required=True, tracking=True)
     age = fields.Integer(string="Age")
-    subject = fields.Char(string="Subject")
     phone = fields.Char(string="Phone")
     email = fields.Char(string="Email")
     address = fields.Text(string="Address")

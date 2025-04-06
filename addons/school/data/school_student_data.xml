@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="student_1" model="school.student">
+        <field name="name">Student A</field>
+        <field name="age">16</field>
+        <field name="teacher_id" ref="teacher_1" />
+    </record>
+    <record id="student_2" model="school.student">
+        <field name="name">Student B</field>
+        <field name="age">17</field>
+        <field name="teacher_id" ref="teacher_1" />
+    </record>
+    <record id="student_3" model="school.student">
+        <field name="name">Student C</field>
+        <field name="age">15</field>
+        <field name="teacher_id" ref="teacher_2" />
+    </record>
+    <record id="student_4" model="school.student">
+        <field name="name">Student D</field>
+        <field name="age">16</field>
+        <field name="teacher_id" ref="teacher_2" />
+    </record>
+    <record id="student_5" model="school.student">
+        <field name="name">Student E</field>
+        <field name="age">18</field>
+        <field name="teacher_id" ref="teacher_3" />
+    </record>
+    <record id="student_6" model="school.student">
+        <field name="name">Student F</field>
+        <field name="age">17</field>
+        <field name="teacher_id" ref="teacher_3" />
+    </record>
+    <record id="student_7" model="school.student">
+        <field name="name">Student G</field>
+        <field name="age">15</field>
+        <field name="teacher_id" ref="teacher_4" />
+    </record>
+    <record id="student_8" model="school.student">
+        <field name="name">Student H</field>
+        <field name="age">16</field>
+        <field name="teacher_id" ref="teacher_4" />
+    </record>
+    <record id="student_9" model="school.student">
+        <field name="name">Student I</field>
+        <field name="age">17</field>
+        <field name="teacher_id" ref="teacher_5" />
+    </record>
+    <record id="student_10" model="school.student">
+        <field name="name">Student J</field>
+        <field name="age">18</field>
+        <field name="teacher_id" ref="teacher_5" />
+    </record>
+
+</odoo>
