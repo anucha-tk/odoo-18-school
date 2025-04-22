@@ -47,10 +47,21 @@
         </field>
     </record>
 
+    <record id="school_student_view_graph" model="ir.ui.view">
+        <field name="name">school.student.view.graph</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <graph string="Student Graph" type="bar" stacked="0">
+                <field name="age" />
+                <field name="gender" />
+            </graph>
+        </field>
+    </record>
+
     <record id="school_student_action" model="ir.actions.act_window">
         <field name="name">Student</field>
         <field name="res_model">school.student</field>
-        <field name="view_mode">list,pivot,form</field>
+        <field name="view_mode">list,pivot,graph,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
