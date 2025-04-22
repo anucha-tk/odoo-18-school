@@ -13,3 +13,13 @@ class Subject(models.Model):
         "school.teacher", string="Teacher", required=True
     )
     student_ids = fields.Many2many("school.student", string="Students")
+    status_id = fields.Many2one("school.subject.status", string="Status")
+
+
+class SubjectStatus(models.Model):
+    _name = "school.subject.status"
+    _description = "School Subject Status"
+    _order = "sequence"
+
+    name = fields.Char("Name")
+    sequence = fields.Integer("Sequence", default="10")

@@ -10,6 +10,7 @@
                 <field name="code" />
                 <field name="description" />
                 <field name="teacher_id" />
+                <field name="status_id" />
             </list>
         </field>
     </record>
@@ -19,6 +20,9 @@
         <field name="model">school.subject</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="status_id" widget="statusbar" options="{'clickable': 1}" />
+                </header>
                 <sheet>
                     <group col="2" string="Subject Information">
                         <group>
