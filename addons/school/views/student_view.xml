@@ -8,6 +8,7 @@
             <list>
                 <field name="name" />
                 <field name="age" />
+                <field name="gender" />
                 <field name="teacher_id" />
             </list>
         </field>
@@ -22,6 +23,7 @@
                     <group string="Student Information">
                         <field name="name" />
                         <field name="age" />
+                        <field name="gender" />
                     </group>
                     <group string="Teacher">
                         <field name="teacher_id" />
@@ -31,10 +33,24 @@
         </field>
     </record>
 
+    <record id="school_student_view_pivot" model="ir.ui.view">
+        <field name="name">school.student.view.pivot</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <pivot string="Student Pivot" disable_linking="true" display_quantity="true"
+                default_order="age">
+                <field name="create_date" interval="day" type="row" />
+                <field name="teacher_id" />
+                <field name="gender" type="col" />
+                <field name="age" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
     <record id="school_student_action" model="ir.actions.act_window">
         <field name="name">Student</field>
         <field name="res_model">school.student</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">list,pivot,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>

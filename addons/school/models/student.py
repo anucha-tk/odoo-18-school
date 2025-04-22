@@ -9,3 +9,11 @@ class Student(models.Model):
     name = fields.Char(string="Name", required=True)
     age = fields.Integer(string="Age", required=True)
     teacher_id = fields.Many2one("school.teacher", string="Teacher")
+    gender = fields.Selection(
+        [
+            ("Male", "male"),
+            ("Female", "female"),
+        ],
+        string="gender",
+        required=True,
+    )
