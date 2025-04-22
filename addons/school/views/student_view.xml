@@ -11,6 +11,7 @@
                 <field name="gender" />
                 <field name="teacher_id" />
                 <field name="status" />
+                <field name="create_date" />
             </list>
         </field>
     </record>
@@ -89,6 +90,10 @@
         <field name="model">school.student</field>
         <field name="arch" type="xml">
             <search>
+                <filter name="create_date" string="CreateDate" date="create_date" />
+                <filter name="7_days" string="7Days"
+                    domain="[('create_date', '>=', (context_today() - relativedelta(days=7)))]"
+                />
                 <filter name="male" domain="[('gender','=','Male')]" />
                 <filter name="female" domain="[('gender','=','Female')]" />
                 <filter name="active" domain="[('status','=','active')]" />
