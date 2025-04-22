@@ -17,3 +17,13 @@ class Student(models.Model):
         string="gender",
         required=True,
     )
+    status = fields.Selection(
+        [
+            ("active", "Active"),
+            ("in_active", "In Active"),
+            ("reject", "Reject"),
+        ],
+        string="status",
+        default="active",
+        required=True,
+    )
