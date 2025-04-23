@@ -44,6 +44,19 @@
         </field>
     </record>
 
+    <record id="school_subject_view_search" model="ir.ui.view">
+        <field name="name">school.subject.view.search</field>
+        <field name="model">school.subject</field>
+        <field name="arch" type="xml">
+            <search>
+                <searchpanel>
+                    <field name="status_id" select="multi" icon="fa-cogs" color="blue"
+                        enable_counters="1" />
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
     <record id="school_subject_action" model="ir.actions.act_window">
         <field name="name">Subject</field>
         <field name="res_model">school.subject</field>
