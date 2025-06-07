@@ -6,10 +6,6 @@
         <field name="model">school.teacher</field>
         <field name="arch" type="xml">
             <list default_order="age asc">
-                <header>
-                    <h1 class="" string="Welcome" display="always" />
-                    <button name="" type="object" string="Hello" />
-                </header>
                 <field name="name" decoration-bf="1" nolabel="1" width="100px" />
                 <field name="age" decoration-it="1" avg="Avg age" />
                 <field name="phone" decoration-primary="1" optional="show" />
