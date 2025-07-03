@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_todo_task" model="ir.ui.view">
+            <field name="name">todo.task.form</field>
+            <field name="model">todo.task</field>
+            <field name="arch" type="xml">
+                <form string="Todo Task">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="is_done" />
+                            <field name="date_deadline" />
+                            <field name="user_id" />
+                            <field name="tag_ids" widget="many2many_tags" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_todo_task" model="ir.ui.view">
+            <field name="name">todo.task.tree</field>
+            <field name="model">todo.task</field>
+            <field name="arch" type="xml">
+                <list string="Todo Tasks" decoration-info="is_done == False">
+                    <field name="name" />
+                    <field name="is_done" />
+                    <field name="date_deadline" />
+                    <field name="user_id" />
+                </list>
+            </field>
+        </record>
+
+        <record id="view_search_todo_task" model="ir.ui.view">
+            <field name="name">todo.task.search</field>
+            <field name="model">todo.task</field>
+            <field name="arch" type="xml">
+                <search string="Search Todo Task">
+                    <field name="name" />
+                    <field name="user_id" />
+                    <filter name="filter_not_done" string="Not Done"
+                        domain="[('is_done', '=', False)]" />
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_user" string="Responsible"
+                            context="{'group_by': 'user_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_todo_task" model="ir.actions.act_window">
+            <field name="name">Todo Tasks</field>
+            <field name="res_model">todo.task</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first Todo task!
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_todo_task_root"
+            name="Todo App"
+            sequence="100" />
+        <menuitem
+            id="menu_todo_task_list"
+            name="My Tasks"
+            parent="menu_todo_task_root"
+            action="action_todo_task"
+            sequence="10" />
+
+        <record id="view_form_todo_task_tag" model="ir.ui.view">
+            <field name="name">todo.task.tag.form</field>
+            <field name="model">todo.task.tag</field>
+            <field name="arch" type="xml">
+                <form string="Todo Tag">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_todo_task_tag" model="ir.ui.view">
+            <field name="name">todo.task.tag.tree</field>
+            <field name="model">todo.task.tag</field>
+            <field name="arch" type="xml">
+                <list string="Todo Tags">
+                    <field name="name" />
+                </list>
+            </field>
+        </record>
+
+        <record id="action_todo_task_tag" model="ir.actions.act_window">
+            <field name="name">Todo Tags</field>
+            <field name="res_model">todo.task.tag</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+
+        <menuitem
+            id="menu_todo_task_tag_list"
+            name="Task Tags"
+            parent="menu_todo_app_root"
+            action="action_todo_task_tag"
+            sequence="10" />
+
+    </data>
+</odoo>

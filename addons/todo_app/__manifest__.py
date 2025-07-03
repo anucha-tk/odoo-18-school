@@ -3,7 +3,9 @@
     "version": "1.0",
     "depends": ["base", "web"],
     "data": [
+        "security/ir.model.access.csv",
         "views/dashboard_view.xml",
+        "views/todo_task_views.xml",
     ],
     "assets": {
         "web.assets_backend": [
