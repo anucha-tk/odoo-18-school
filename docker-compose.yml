@@ -24,7 +24,7 @@ services:
       - "20018:8072" # live chat
     tty: true
     # command: --
-    command: odoo -u school -d odoo-18-school --dev=xml,reload
+    command: odoo -u todo_app -d odoo-18-school --dev=xml,reload
     environment:
       - HOST=db
       - USER=odoo
