@@ -11,7 +11,7 @@
         sequence="100" />
     <menuitem
         id="menu_open_todo_client_action"
-        name="todo Dashboard"
+        name="Todo Dashboard"
         parent="menu_todo_app_root"
         action="todo_client_action"
         sequence="10" />

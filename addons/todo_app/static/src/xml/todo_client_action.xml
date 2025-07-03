@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
     <t t-name="todo_app.clientaction">
-        Hello world
+        <div class="o_todo_app_dashboard_container p-4 bg-white rounded-lg shadow-md">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Your Todo App Dashboard</h1>
+
+            <div t-if="state.loading" class="text-center text-blue-500 mb-4">
+                <i class="fa fa-spinner fa-spin mr-2"/> Loading data...
+            </div>
+
+            <div t-if="state.error" class="text-red-500 mb-4 p-2 bg-red-100 border border-red-300 rounded">
+                <t t-esc="state.error"/>
+            </div>
+
+            <div t-if="!state.loading and state.tasks.length > 0">
+                <h2 class="text-2xl font-semibold mb-3">Your Todo Tasks:</h2>
+                <ul class="list-none p-0 space-y-2">
+                    <t t-foreach="state.tasks" t-as="task" t-key="task.id">
+                        <li class="p-3 border rounded-md flex items-center justify-between"
+                            t-att-class="{ 'bg-green-100 border-green-300': task.is_done, 'bg-gray-50 border-gray-200': !task.is_done }">
+                            <div class="flex items-center">
+                                <input type="checkbox" t-att-checked="task.is_done ? 'checked' : undefined" class="mr-3" disabled="disabled"/>
+                                <span t-esc="task.name" t-att-class="{ 'line-through text-gray-500': task.is_done }"/>
+                                <t t-if="task.date_deadline">
+                                    <span class="ml-4 text-sm text-gray-500">
+                                        (Due: <t t-esc="task.date_deadline"/>)
+                                    </span>
+                                </t>
+                                <t t-if="task.user_id">
+                                    <span class="ml-4 text-sm text-gray-500">
+                                        (Assigned to: <t t-esc="task.user_id[1]"/>) </span>
+                                </t>
+                            </div>
+                            </li>
+                    </t>
+                </ul>
+            </div>
+
+            <div t-if="!state.loading and state.tasks.length === 0" class="text-center text-gray-500 p-4 border rounded-md mt-6">
+                No tasks found. Create some or check your data source.
+            </div>
+
+            <button class="mt-6 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                Refresh Tasks
+            </button>
+        </div>
     </t>
 </templates>
