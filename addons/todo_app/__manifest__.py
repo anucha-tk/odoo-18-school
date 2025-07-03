@@ -3,12 +3,11 @@
     "version": "1.0",
     "depends": ["base", "web"],
     "data": [
-        # Remove this line: "views/web_asset_backend_template.xml",
-        # Add other necessary XML files here, if any (e.g., security, regular views)
+        "views/dashboard_view.xml",
     ],
     "assets": {
         "web.assets_backend": [
-            "/todo_app/static/src/js/dashboard.js",
+            "todo_app/static/src/**",
         ],
     },
     "installable": True,

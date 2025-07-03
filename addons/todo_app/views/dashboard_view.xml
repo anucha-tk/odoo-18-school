@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.actions.client" id="todo_client_action">
+        <field name="name">Todo App</field>
+        <field name="tag">todo_app.TODOClientAction</field>
+    </record>
+
+    <menuitem
+        id="menu_todo_app_root"
+        name="TODO APP"
+        sequence="100" />
+    <menuitem
+        id="menu_open_todo_client_action"
+        name="todo Dashboard"
+        parent="menu_todo_app_root"
+        action="todo_client_action"
+        sequence="10" />
+</odoo>
